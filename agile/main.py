@@ -14,6 +14,7 @@ class SubsidiaryTest(unittest.TestCase):
     def testIsSubsidiary(self):
         self.assertEqual(self.subsidiary1.is_subsidiary(self.boss1), True)
 
+
 class TownTestCase(unittest.TestCase):
     def test_gdp_town(self):
         country1 = Country()

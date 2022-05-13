@@ -26,10 +26,5 @@ class InnerTestClass(unittest.TestCase):
         self.assertEqual(self.subsidiary1.is_subsidiary(self.subsidiary1.pdg), True)
 
 
-def test_inner_test_class(self):
-    suite = unittest.defaultTestLoader.loadTestsFromTestCase(self.InnerTestClass)
-    unittest.TextTestRunner().run(suite)
-
-
 if __name__ == '__main__':
     unittest.main()

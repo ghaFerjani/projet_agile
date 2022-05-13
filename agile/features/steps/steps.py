@@ -1,10 +1,11 @@
 from behave import *
-from Filiale import *
+from agile.filiale import *
+from agile.boss import *
 
 @given("une filiale Louis Vuitton")
 def step_impl(context):
     context.boss = Boss("Bernard Arnault", "LVMH")
-    context.filiale = Filiale("LVMH", "Louis Vuitton", context.boss)
+    context.filiale = Subsidiary("LVMH", "Louis Vuitton", context.boss)
     assert context.filiale is not None
 
 @when("demande la maison mere")
@@ -18,7 +19,7 @@ def step_impl(context):
 @given("une entreprise {filiale} de {mere}")
 def step_impl(context, filiale, mere):
     context.boss = Boss(filiale, mere)
-    context.filiale = Filiale(mere, filiale, context.boss)
+    context.filiale = Subsidiary(mere, filiale, context.boss)
     assert context.filiale is not None
 
 @then("retourner la maison mere {mere}")
