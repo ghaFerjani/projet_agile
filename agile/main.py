@@ -15,6 +15,15 @@ class SubsidiaryTest(unittest.TestCase):
         self.assertEqual(self.subsidiary1.is_subsidiary(self.boss1), True)
 
 
+class DetectFiscalOptiTest(unittest.TestCase):
+    def test_detect_fiscal_opt(self):
+        self.country1 = Country('USA', 0.3)
+        self.country2 = Country()
+        self.boss1 = Boss("Bernard Arnault", "LVMH")
+        self.subsidiary = Subsidiary("LVMH", "Louis Vuitton", self.boss1, self.country1, self.country2)
+        self.assertEqual(self.subsidiary.detect_fiscal_optimisation(), True)
+
+
 class TownTestCase(unittest.TestCase):
     def test_gdp_town(self):
         country1 = Country()

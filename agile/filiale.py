@@ -14,4 +14,4 @@ class Subsidiary:
         return self.parent == Boss.get_company(self.pdg)
 
     def detect_fiscal_optimisation(self) -> bool:
-        return self.parent_subsidiary_country != self.subsidiary_country
+        return self.parent_subsidiary_country.get_tax_rate() != self.subsidiary_country.get_tax_rate()
